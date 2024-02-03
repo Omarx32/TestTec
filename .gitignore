@@ -1,0 +1,11 @@
+# Archivos temporales
+*.tmp
+*.log
+
+# Archivos compilados
+*.pyc
+*.class
+
+# Directorios generados por el entorno de desarrollo
+__pycache__
+node_modules
