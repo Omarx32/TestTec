@@ -1,10 +1,14 @@
 const { getProduct, getProductN, createProduct, updateProduct, deletedProduct } = require('../controllers/productC')
+//En este archivo manejamos los errores principales y recibimos la informacion enviada por param/body, etc
 
 
 const getProductH = async (req, res) => {
     const { name } = req.query;
+    const {page, limit} = req.query
+
+   
     try {
-        const response = name ? await getProductN(name) : await getProduct();
+        const response = name ? await getProductN(name) : await getProduct(page, limit);
         console.log(response);
         res.status(200).json(response);
     } catch (error) {

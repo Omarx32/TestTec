@@ -3,8 +3,8 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const router = require('./src/routes/routes');
-const {  CONNECT } = process.env
-
+const { CONNECT, PORT } = process.env
+//Inicializamos el servidor, conectamos con la base de datos y le damos un puerto
 
 mongoose.connect(`${CONNECT}`)
     .then(() => console.log("Db is working"))
@@ -13,6 +13,6 @@ mongoose.connect(`${CONNECT}`)
 app.use(express.json())
 app.use('/', router)
 
-app.listen(5000, () => {
+app.listen(PORT, () => {
     console.log('Server is Running!')
 })

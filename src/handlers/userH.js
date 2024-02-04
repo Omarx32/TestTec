@@ -1,4 +1,5 @@
 const {userRegister, userLogin} = require('../controllers/userC')
+//En este archivo manejamos los errores principales y recibimos la informacion enviada por param/body, etc
 
 const userH = async(req, res)=>{
     try {
